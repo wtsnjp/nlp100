@@ -1,2 +1,2 @@
 str = "パタトクカシーー"
-print(str[0:8:2])
+print(str[::2])
