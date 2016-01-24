@@ -1,0 +1,1 @@
+{'Peace': 'P', 'Could': 'C', 'He': 'He', 'Can': 'Ca', 'Hi': 'H', 'Clause': 'Cl', 'Not': 'N', 'Lied': 'Li', 'New': 'Ne', 'Might': 'Mi', 'Security': 'S', 'Boron': 'B', 'Sign': 'Si', 'Oxidize': 'O', 'Also': 'Al', 'Fluorine': 'F', 'Nations': 'Na', 'Because': 'Be', 'King': 'K', 'Arthur': 'Ar'}
