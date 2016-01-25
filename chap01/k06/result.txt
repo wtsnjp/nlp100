@@ -1,0 +1,7 @@
+X = {'ap', 'ra', 'se', 'ad', 'is', 'ar', 'pa', 'di'}
+Y = {'ag', 'ap', 'ra', 'ph', 'ar', 'pa', 'gr'}
+X+Y = {'ag', 'ap', 'ra', 'ph', 'se', 'gr', 'ad', 'is', 'ar', 'pa', 'di'}
+X*Y = {'pa', 'ra', 'ar', 'ap'}
+X-Y = {'di', 'se', 'is', 'ad'}
+X include 'se': True
+Y include 'se': False
