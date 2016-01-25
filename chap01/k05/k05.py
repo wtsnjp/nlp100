@@ -4,7 +4,7 @@ words = str.split()
 def n_gram(list, type):
     bi_gram = []
     if type == 'char':
-        for w in words:
+        for w in list:
             l = len(w)
             if l > 1:
                 for i in range(l):
