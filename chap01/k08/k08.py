@@ -8,3 +8,4 @@ def cipher(text):
     return code
 
 print(cipher("Hello world!"))
+print(cipher("Hvool dliow!"))
