@@ -1,1 +1,1 @@
-tr '\t' ' ' < $1 | tee check.txt
+tr '\t' ' ' < $1
