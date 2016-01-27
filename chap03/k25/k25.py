@@ -10,7 +10,7 @@ with open(file_name) as f:
     r1 = re.compile("\{\{基礎情報")
     r2 = re.compile("\}\}")
     r3 = re.compile("\|")
-    r4 = re.compile("<ref>.+?(</ref>|$)")
+    r4 = re.compile("<ref(\s|>).+?(</ref>|$)")
     for l in f:
         if kiso:
             m1 = r2.match(l)
