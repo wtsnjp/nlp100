@@ -1,0 +1,1 @@
+[<__main__.Morph object at 0x106508240>, <__main__.Morph object at 0x106508278>, <__main__.Morph object at 0x1065082b0>, <__main__.Morph object at 0x1065082e8>, <__main__.Morph object at 0x106508320>]
