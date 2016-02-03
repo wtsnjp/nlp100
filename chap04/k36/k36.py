@@ -15,7 +15,8 @@ with open(file_name) as f:
         else:
             l = l.replace('\t', ',')
             v = l.split(',')
-            s.append({'surface': v[0], 'base': v[7], 'pos': v[1], 'pos1': v[2]})
+            if len(v) == 10:
+                s.append({'surface': v[0], 'base': v[7], 'pos': v[1], 'pos1': v[2]})
 
 tango = []
 
