@@ -20,8 +20,8 @@ with open(file_name) as f:
         elif l[0] != "*":
             l = l.replace('\t', ',')
             v = l.split(',')
-            m = Morph(v[0], v[7], v[1], v[2])
-            s.append(m)
-            # s.append({'surface': v[0], 'base': v[7], 'pos': v[1], 'pos1': v[2]})
+            if len(v) == 10:
+                m = Morph(v[0], v[7], v[1], v[2])
+                s.append(m)
 
 print(sentences[2])
