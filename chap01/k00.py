@@ -1,4 +1,6 @@
+#
 # usage: python k00.py
+#
 
 def reverse(str):
     return str[::-1]
