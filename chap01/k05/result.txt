@@ -1,2 +1,0 @@
-['am', 'an', 'NL', 'LP', 'Pe', 'er']
-['I-am', 'am-an', 'an-NLPer']
