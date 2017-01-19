@@ -11,4 +11,3 @@ def alt_cat(s1, s2):
 
 if __name__ == '__main__':
     print(alt_cat("パトカー", "タクシー"))
-

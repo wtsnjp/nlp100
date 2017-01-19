@@ -16,4 +16,3 @@ if __name__ == '__main__':
     after the heavy lectures involving quantum mechanics.
     """
     print(get_low(s))
-

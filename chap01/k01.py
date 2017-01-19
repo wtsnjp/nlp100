@@ -7,4 +7,3 @@ def get_odd(s):
 
 if __name__ == '__main__':
     print(get_odd("パタトクカシーー"))
-

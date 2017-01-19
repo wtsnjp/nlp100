@@ -30,4 +30,3 @@ if __name__ == '__main__':
 
     print(n_gram(2, str2wlist(s1)))
     print(n_gram(2, str2clist(s1)))
-

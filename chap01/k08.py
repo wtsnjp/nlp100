@@ -15,4 +15,3 @@ if __name__ == '__main__':
     ecd = cipher("Hello world!")
     dcd = cipher(ecd)
     print(ecd, dcd)
-
