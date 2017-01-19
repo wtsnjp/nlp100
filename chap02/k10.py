@@ -13,4 +13,3 @@ def count_lines(fn):
 if __name__ == '__main__':
     fn = sys.argv[1]
     print(count_lines(fn))
-

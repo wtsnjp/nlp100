@@ -14,4 +14,3 @@ def tab2space(fn):
 if __name__ == '__main__':
     fn = sys.argv[1]
     print(tab2space(fn), end='')
-
