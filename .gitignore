@@ -91,4 +91,5 @@ ENV/
 
 # data
 *.txt
+*.txt.*
 *.gz
