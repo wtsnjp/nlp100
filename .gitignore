@@ -88,8 +88,3 @@ ENV/
 
 # Rope project settings
 .ropeproject
-
-# data
-*.txt
-*.txt.*
-*.gz
