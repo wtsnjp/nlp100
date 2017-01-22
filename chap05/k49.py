@@ -21,7 +21,7 @@ def noun_noun_path(s):
             else:
                 mid, dst = [], e.dst
                 while not s[dst] in p:
-                    mid.append(''.join([m.surface for m in s[dst].morphs]))
+                    mid.append(''.join([m.surface for m in s[dst].morphs if m.pos != '記号']))
                     dst = s[dst].dst
                 ed = [''.join([m.surface for m in s[dst].morphs if m.pos != '記号'])]
                 pl.append([st1, st2 + mid, ed])
