@@ -1,1 +1,0 @@
-[<__main__.Morph object at 0x10117a278>, <__main__.Morph object at 0x10117a2b0>, <__main__.Morph object at 0x10117a2e8>, <__main__.Morph object at 0x10117a320>, <__main__.Morph object at 0x10117a358>]
