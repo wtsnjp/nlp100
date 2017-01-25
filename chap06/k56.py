@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     root = ET.parse(fn).getroot()
     sl = [[t.find('word').text for t in s.findall('tokens/*')]
-            for s in root.find('./document/sentences')]
+            for s in root.find('document/sentences')]
     cl = [[[int(m.find('sentence').text)-1,
             int(m.find('start').text)-1, m.find('text').text.split(' ')] 
                 for m in e.findall('mention')]
