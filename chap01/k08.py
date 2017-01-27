@@ -3,15 +3,9 @@
 #
 
 def cipher(src):
-    ecd = ""
-    for w in src:
-        c = ord(w)
-        if 96 < c < 123:
-            c = 219 - c
-        ecd += chr(c)
-    return ecd
+    return ''.join([chr(219-ord(c)) if 96 < ord(c) < 123 else c for c in src])
 
 if __name__ == '__main__':
-    ecd = cipher("Hello world!")
+    ecd = cipher('Hello world!')
     dcd = cipher(ecd)
     print(ecd, dcd)

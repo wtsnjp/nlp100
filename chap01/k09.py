@@ -12,13 +12,13 @@ def typoglycemia(src):
             x, y = [randint(1, l-2) for i in range(2)]
             if x == y: break
             w[x], w[y] = w[y], w[x]
-        owl.append("".join(w))
-    return " ".join(owl)
+        owl.append(''.join(w))
+    return ' '.join(owl)
 
 if __name__ == '__main__':
-    src = """\
+    src = '''\
     I couldn't believe that I could actually understand what I was reading :
     the phenomenal power of the human mind .
-    """
+    '''
 
     print(typoglycemia(src))

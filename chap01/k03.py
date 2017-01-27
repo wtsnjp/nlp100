@@ -4,15 +4,11 @@
 
 # get lengths of words
 def get_low(s):
-    t = str.maketrans(".,", "  ")
-    ws, l = s.translate(t).split(), []
-    for w in ws:
-        l.append(len(w))
-    return l
+    return [len(w) for w in [''.join([c for c in w if c.isalnum()]) for w in s.split()]]
 
 if __name__ == '__main__':
-    s = """\
+    s = '''\
     Now I need a drink, alcoholic of course,
     after the heavy lectures involving quantum mechanics.
-    """
+    '''
     print(get_low(s))

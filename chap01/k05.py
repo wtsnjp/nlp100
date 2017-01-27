@@ -2,31 +2,18 @@
 # usage: python k05.py
 #
 
-def str2wlist(src):
-    wl = []
-    for s in src.rstrip(".").split("."):
-        wl.append(s.split())
-    return wl
+def str2wl(src):
+    return [s.split() for s in src.rstrip('.').split('.')]
 
-def str2clist(src):
-    cl = []
-    t = str.maketrans(".", " ")
-    for w in src.translate(t).split():
-        cl.append(list(w))
-    return cl
+def str2cl(src):
+    return [list(w) for w in [''.join([c for c in w if c.isalnum()]) for w in src.split()]]
 
 def n_gram(n, gl):
-    ngl = []
-    for g in gl:
-        l = len(g)
-        if l >= n:
-            for i in range(l-n+1):
-                ngl.append(g[i:i+n])
-    return ngl
+    return [g[i:i+n] for g in gl for i in range(len(g)-n+1) if len(g) >= n]
 
 if __name__ == '__main__':
-    s1 = "I am an NLPer"
-    s2 = "I want to be a TeXnician. I love TeX."
+    s1 = 'I am an NLPer'
+    s2 = 'I want to be a TeXnician. I love TeX.'
 
-    print(n_gram(2, str2wlist(s1)))
-    print(n_gram(2, str2clist(s1)))
+    print(n_gram(2, str2wl(s1)))
+    print(n_gram(2, str2cl(s1)))

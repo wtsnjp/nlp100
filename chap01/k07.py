@@ -3,8 +3,7 @@
 #
 
 def template(x, y, z):
-    s = "%s時の%sは%s" % (x, y, z)
-    return s
+    return '%s時の%sは%s' % (x, y, z)
 
 if __name__ == '__main__':
-    print(template(12, "気温", 22.4))
+    print(template(12, '気温', 22.4))
