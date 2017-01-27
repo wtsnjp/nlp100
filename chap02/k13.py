@@ -5,18 +5,8 @@
 import sys
 
 def col_get(fns):
-    ad, r = [], []
-    for fn in fns:
-        cd = []
-        for l in open(fn):
-            cd.append(l.rstrip())
-        ad.append(cd)
-    for i in range(len(ad[0])):
-        cd = []
-        for d in ad:
-            cd.append(d[i])
-        r.append(cd)
-    return r
+    ad = [[l.rstrip() for l in open(fn)] for fn in fns]
+    return [[d[i] for d in ad] for i in range(len(ad[0]))]
 
 if __name__ == '__main__':
     fns = sys.argv[1:]

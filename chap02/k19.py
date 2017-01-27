@@ -6,15 +6,8 @@ import sys
 import collections
 
 def sort_by_frequency(fn, n):
-    ls = []
-    for l in open(fn):
-        t = l.split()
-        ls.append(t[n-1])
-    cd = collections.Counter(ls)
-    ls = []
-    for k, v in cd.most_common():
-        ls.append(k)
-    return ls
+    cd = collections.Counter([l.split()[n-1] for l in open(fn)])
+    return [k for k, v in cd.most_common()]
 
 if __name__ == '__main__':
     fn, n = sys.argv[1], int(sys.argv[2])

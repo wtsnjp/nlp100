@@ -6,9 +6,7 @@ import sys
 from operator import itemgetter
 
 def sort_by_item(fn, n):
-    ls = []
-    for l in open(fn):
-        ls.append(l.split())
+    ls = [l.split() for l in open(fn)]
     ls.sort(key=itemgetter(n-1), reverse=True)
     return ls
 

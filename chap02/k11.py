@@ -3,13 +3,9 @@
 #
 
 import sys
-import re
 
 def tab2space(fn):
-    r = ""
-    for l in open(fn):
-        r += re.sub(r'\t', ' ', l)
-    return r
+    return ''.join([l.replace('\t', ' ') for l in open(fn)])
 
 if __name__ == '__main__':
     fn = sys.argv[1]

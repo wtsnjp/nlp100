@@ -5,10 +5,7 @@
 import sys
 
 def count_lines(fn):
-    c = 0
-    for l in open(fn):
-        c += 1
-    return c
+    return len([l for l in open(fn)])
 
 if __name__ == '__main__':
     fn = sys.argv[1]

@@ -5,10 +5,7 @@
 import sys
 
 def cut_col(fn, cn):
-    r = []
-    for l in open(fn):
-        r.append(l.split()[cn-1])
-    return r
+    return [l.split()[cn-1] for l in open(fn)]
 
 if __name__ == '__main__':
     fn, cn = sys.argv[1], int(sys.argv[2])

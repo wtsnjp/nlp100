@@ -5,10 +5,7 @@
 import sys
 
 def tail(fn, n):
-    r = []
-    for l in open(fn):
-        r.append(l)
-    return ''.join(r[-n:])
+    return ''.join([l for l in open(fn)][-n:])
 
 if __name__ == '__main__':
     fn, n = sys.argv[1], int(sys.argv[2])

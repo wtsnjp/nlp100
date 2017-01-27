@@ -5,11 +5,7 @@
 import sys
 
 def sort_item(fn, n):
-    s = set()
-    for l in open(fn):
-        t = l.split()
-        s.add(t[n-1])
-    return sorted(list(s))
+    return sorted(list({l.split()[n-1] for l in open(fn)}))
 
 if __name__ == '__main__':
     fn, n = sys.argv[1], int(sys.argv[2])

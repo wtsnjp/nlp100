@@ -5,17 +5,14 @@
 import sys
 from k10 import count_lines
 
-def split(fn, n):
-    r, b, c, ln = [], '', 0, count_lines(fn)
-    for l in open(fn):
-        b += l
-        if c == ln-1 or c%n == n-1:
-            r.append(b)
-            b = ''
-        c += 1
-    return r
+def n_split(fn, n):
+    sl = open(fn).read().split('\n')
+    ln = len(sl) // n
+    return [sl[i*ln:(i+1)*ln] if i<n-1 else sl[i*ln:] for i in range(n)]
 
 if __name__ == '__main__':
     fn, n = sys.argv[1], int(sys.argv[2])
-    d = split(fn, n)
-    print('\n'.join(d))
+    d = n_split(fn, n)
+    for i in range(n):
+        if i != 0: print('\n')
+        print('\n'.join(d[i]), end='')
