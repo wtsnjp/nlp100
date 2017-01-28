@@ -7,12 +7,9 @@ import re
 from k20 import load_article
 
 def get_media_files(text):
-    ls, p = [], re.compile("ファイル:(.+?)\|")
-    for l in text.splitlines():
-        m = p.search(l)
-        if m:
-            ls.append(str(m.group(1)).strip().replace(' ', '_'))
-    return ls
+    p = re.compile("ファイル:(.+?)\|")
+    return [str(m.group(1)).strip().replace(' ', '_')
+            for m in [p.search(l) for l in text.splitlines()] if m]
 
 if __name__ == '__main__':
     fn, title = sys.argv[1:]

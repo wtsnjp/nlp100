@@ -9,9 +9,8 @@ from k25 import template2dict
 from k26 import remove_stress
 
 def remove_inner_links(dc):
-    for k, v in dc.items():
-        dc[k] = re.sub(r'\[\[(.+\||)(.+?)\]\]', r'\2', v)
-    return dc
+    r = re.compile('\[\[(.+\||)(.+?)\]\]')
+    return {k:r.sub(r'\2', v) for k,v in dc.items()}
 
 if __name__ == '__main__':
     fn, title, template = sys.argv[1:]

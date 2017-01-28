@@ -7,16 +7,10 @@ import gzip
 import json
 
 def load_article(fn, title):
-    f = gzip.open(fn, 'rb')
-    data = f.read().decode('utf-8')
-    f.close()
-
-    article_dict = {}
-    for l in data.splitlines():
-        line_dict = json.loads(l)
-        article_dict[line_dict['title']] = line_dict
-
-    return article_dict[title]['text']
+    data = gzip.open(fn, 'rb').read().decode('utf-8')
+    for a in [json.loads(l) for l in data.splitlines()]:
+        if a['title'] == title:
+            return a['text']
 
 if __name__ == '__main__':
     fn, title = sys.argv[1:]

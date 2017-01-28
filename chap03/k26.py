@@ -8,9 +8,8 @@ from k20 import load_article
 from k25 import template2dict
 
 def remove_stress(dc):
-    for k, v in dc.items():
-        dc[k] = re.sub(r"'+", '', v)
-    return dc
+    r = re.compile("'+")
+    return {k:r.sub('', v) for k,v in dc.items()}
 
 if __name__ == '__main__':
     fn, title, template = sys.argv[1:]

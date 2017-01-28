@@ -7,12 +7,9 @@ import re
 from k20 import load_article
 
 def get_section_structure(text):
-    ls, p = [], re.compile("(=+)(.*?)=+")
-    for l in text.splitlines():
-        m = p.match(l)
-        if m:
-            ls.append([str(m.group(2)).strip(), len(m.group(1))-1])
-    return ls
+    p = re.compile("(=+)(.*?)=+")
+    return [[str(m.group(2)).strip(), len(m.group(1))-1]
+            for m in [p.match(l) for l in text.splitlines()] if m]
 
 if __name__ == '__main__':
     fn, title = sys.argv[1:]
