@@ -14,11 +14,7 @@ if __name__ == '__main__':
     data = load_mecab(fn)
     ls = frequency_ranking(data)
 
-    cl, ln = [], len(ls)
-    for v in ls:
-        cl.append(v[1]/ln)
-
-    plt.hist(cl, 50, range=(0.0, 0.01))
+    plt.hist([v[1]/len(ls) for v in ls], 50, range=(0.0, 0.01))
     plt.xlabel('出現頻度')
     plt.ylabel('種類数')
     plt.show()

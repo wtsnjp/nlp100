@@ -14,11 +14,7 @@ if __name__ == '__main__':
     data = load_mecab(fn)
     ls = frequency_ranking(data)
 
-    cl, ln = [], len(ls)
-    for v in ls:
-        cl.append(v[1]/ln)
-
-    plt.plot(cl)
+    plt.plot([v[1]/len(ls) for v in ls])
     plt.xscale('log')
     plt.yscale('log')
     plt.xlabel('順位')

@@ -7,14 +7,8 @@ import collections
 from k30 import load_mecab
 
 def frequency_ranking(data):
-    ls, tmp = [], []
-    for s in data:
-        for m in s:
-            tmp.append(m['base'])
-    cd = collections.Counter(tmp)
-    for k, v in cd.most_common():
-        ls.append([k, v])
-    return ls
+    cd = collections.Counter([m['base'] for s in data for m in s])
+    return [[k, v] for k,v in cd.most_common()]
 
 if __name__ == '__main__':
     fn = sys.argv[1]
