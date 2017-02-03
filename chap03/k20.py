@@ -3,12 +3,11 @@
 #
 
 import sys
-import gzip
 import json
 
 def load_article(fn, title):
-    data = gzip.open(fn, 'rb').read().decode('utf-8')
-    for a in [json.loads(l) for l in data.splitlines()]:
+    for l in open(fn):
+        a = json.loads(l)
         if a['title'] == title:
             return a['text']
 

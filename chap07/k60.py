@@ -3,14 +3,12 @@
 #
 
 import sys
-import gzip
 import json
 import plyvel
 
 def create_kvs(fn1, fn2):
     db = plyvel.DB(fn2, create_if_missing=True)
-    data = gzip.open(fn1, 'rb').read().decode('utf-8')
-    for l in data.splitlines():
+    for l in open(fn1):
         d = json.loads(l)
         if 'name' in d and 'area' in d:
             db.put(d['name'].encode(), d['area'].encode())
