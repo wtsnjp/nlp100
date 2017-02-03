@@ -93,3 +93,4 @@ ENV/
 *.txt*
 *.json.gz
 *.png
+*.ldb
