@@ -6,6 +6,15 @@ import sys
 import os
 import random
 
+def count_pn(sl):
+    pc, nc = 0, 0
+    for s in sl:
+        if s[0] == '+':
+            pc += 1
+        elif s[0] == '-':
+            nc += 1
+    return (pc, nc)
+
 if __name__ == '__main__':
     pf, nf, fn = sys.argv[1:]
 
@@ -16,10 +25,5 @@ if __name__ == '__main__':
         random.shuffle(sl)
         open(fn, 'w').writelines(sl)
     
-    pc, nc = 0, 0
-    for s in sl:
-        if s[0] == '+':
-            pc += 1
-        elif s[0] == '-':
-            nc += 1
-    print(pc, nc)
+    c = count_pn(sl)
+    print(c[0], c[1])
