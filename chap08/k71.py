@@ -6,8 +6,9 @@ import sys
 from collections import Counter
 
 def stopwords(sl, fr):
-    c, st = Counter([w for s in sl for w in list(set(s))]), len(sl) * fr / 100
-    return [k for k, v in c.items() if v > st]
+    cn = Counter([w for s in sl for w in list(set(s))])
+    st = len(sl) * fr / 100
+    return [k for k, v in cn.items() if v > st]
 
 def is_stopword(w, ss):
     return w in ss

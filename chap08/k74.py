@@ -1,5 +1,5 @@
 #
-# usage: python k72.py {file name}
+# usage: python k74.py {file name}
 #
 
 import sys
@@ -11,5 +11,6 @@ if __name__ == '__main__':
     data = SentimentSentences([l for l in open(fn)])
     data.feature_extraction()
 
-    for f in data.feature:
-        print(f)
+    data.train()
+
+    print(data.predict("a very charming and funny movie ."))
