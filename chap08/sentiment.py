@@ -55,11 +55,11 @@ class SentimentSentences:
         X = self.vec.fit_transform(self.feature)
         self.model = lr.fit(X, self.polar)
 
-    def predict(self, text):
+    def predict(self, text, th=50):
         vec = self.vec.transform([text])
         pr = self.model.predict_proba(vec)[0]
-        if pr[0] > pr[1]:
-            return '-1', pr[0]
-        else:
+        if pr[1] > th/100:
             return '+1', pr[1]
+        else:
+            return '-1', pr[0]
 

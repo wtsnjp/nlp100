@@ -5,15 +5,13 @@
 import sys
 from sentiment import SentimentSentences
 
-def split_array(ls, gn):
-    ln = len(ls)
-    for i in range(gn):
-        yield ls[i * ln // gn:(i+1) * ln // gn]
+def cross_validation(gn, ls, th=50):
+    def split_array(ls, gn):
+        ln = len(ls)
+        for i in range(gn):
+            yield ls[i * ln // gn:(i+1) * ln // gn]
 
-if __name__ == '__main__':
-    fn, gn = sys.argv[1], 5
-
-    lss = list(split_array([l for l in open(fn)], gn))
+    lss = list(split_array(ls, gn))
     crs, prs, rrs = [[] for i in range(3)]
 
     for i in range(gn):
@@ -26,7 +24,7 @@ if __name__ == '__main__':
         data.train()
         
         c, pc, rp, pp = [0 for i in range(4)]
-        for l in [(s[0], data.predict(' '.join(s[1:]))[0])
+        for l in [(s[0], data.predict(' '.join(s[1:]), th=th)[0])
                   for s in [l.split() for l in lss[i]]]:
             if l[0] == l[1]:
                 c += 1
@@ -41,9 +39,13 @@ if __name__ == '__main__':
         prs.append(pc/pp)
         rrs.append(pc/rp)
 
-    cr = sum(crs) / len(crs)
-    pr = sum(prs) / len(prs)
-    rr = sum(rrs) / len(rrs)
+    return sum(crs)/len(crs), sum(prs)/len(prs), sum(rrs)/len(rrs)
+
+if __name__ == '__main__':
+    fn = sys.argv[1]
+
+    ls = [l for l in open(fn)]
+    cr, pr, rr = cross_validation(5, ls)
 
     print('correct rate:', cr)
     print('precision rate:', pr)
