@@ -92,5 +92,6 @@ ENV/
 # Data files
 *.txt*
 *.json
+*.csv
 *.png
 *.ldb
