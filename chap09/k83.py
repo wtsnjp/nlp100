@@ -1,5 +1,5 @@
 #
-# usage: python k84.py {context file}
+# usage: python k83.py {context file}
 #
 
 import sys

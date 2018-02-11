@@ -5,8 +5,8 @@
 import sys
 import random
 
-def extract_context(i, o):
-    for l in open(fn):
+def extract_context(ifn, ofn):
+    for l in open(ifn):
         wl = l.split(' ')
         if len(wl) < 2:
             continue
@@ -17,11 +17,11 @@ def extract_context(i, o):
             
             for j in range(max(0, i-d) , min(i+d, len(wl)-1)):
                 if i != j:
-                    with open(ot, 'a') as f:
+                    with open(ofn, 'a') as f:
                         f.write('{}\t{}'.format(t, wl[j]) + '\n')
 
 if __name__ == '__main__':
-    fn = sys.argv[1]
-    ot = 'enwiki-contexts.txt'
+    ifn = sys.argv[1]
+    ofn = 'enwiki-contexts.txt'
 
-    extract_context(fn, ot)
+    extract_context(ifn, ofn)
