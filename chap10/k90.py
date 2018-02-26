@@ -16,7 +16,7 @@ def run_word2vec(fn):
         model.save(mf)
     else:
         model = word2vec.Word2Vec.load(mf)
-    model.save_word2vec_format(mf + '.txt', binary=False)
+    model.wv.save_word2vec_format(mf + '.txt', binary=False)
 
 if __name__ == '__main__':
     fn = sys.argv[1]
