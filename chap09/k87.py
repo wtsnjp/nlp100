@@ -14,10 +14,7 @@ def word_cos_sim(fn, w1, w2):
         elif tmp[0] == w2:
             v2 = np.array([float(i) for i in tmp[1:]])
     if v1 is None or v2 is None:
-        #return None
-        print('failed')
-        print('v1 = ' + str(v1))
-        print('v2 = ' + str(v2))
+        return None
     else:
         return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
 
